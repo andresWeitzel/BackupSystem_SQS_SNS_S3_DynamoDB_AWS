@@ -12,8 +12,8 @@
   API_PORT: '4000'
   API_STAGE: 'dev'
   API_VERSION : 'v1'
-  API_ENDPOINT_XML_FILES_S3_NAME : 'xml-files-s3'
-  API_ENDPOINT_PDF_FILES_S3_NAME : 'pdf-files-s3'
+  API_ENDPOINT_XML_FILES_NAME : 'xml-files'
+  API_ENDPOINT_PDF_FILES_NAME : 'pdf-files'
 
   # Dynamodb database
   DYNAMO_XML_FILES_TABLE_NAME : 'xml-files-table'

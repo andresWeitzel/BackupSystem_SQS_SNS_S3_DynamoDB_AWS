@@ -33,15 +33,14 @@ plugins:
   - serverless-offline
 
 functions:
-  # #DATABASE TEST
-  # databaseTestConnection:
-  #   handler: src/controllers/db/connection.handler
-  #   description: Function in charge of checking the connection to the db
-  #   events:
-  #     - http:
-  #         path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_PRODUCTS_NAME}/db-connection
-  #         method: get
-  #         private: true
+  xmlFiles:
+    handler: src/functions/insertXML.handler
+    description: function in charge of inserting xml type files into dynamodb
+    events:
+      - http:
+          path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_XML_FILES_NAME}/
+          method: POST
+          private: true
   sources:
   - ${file(src/resources/api-gateway.yml)}
   - ${file(src/resources/bucket-s3.yml)}
@@ -57,3 +56,11 @@ custom:
   serverless-offline:
     httpPort: 4000
     lambdaPort: 4002    
+  dynamodb:
+    stages:
+      - dev
+    start:
+      inMemory: true
+      migrate: true
+      seed: true
+      port: 8000  
