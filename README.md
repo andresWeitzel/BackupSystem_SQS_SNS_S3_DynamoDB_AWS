@@ -1,95 +1,465 @@
-# Serverless - AWS Node.js Typescript
 
-This project has been generated using the `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/).
+![Index app](./doc/assets/SNS_SQS_DYNAMO_S3.drawio.png)
 
-For detailed instructions, please refer to the [documentation](https://www.serverless.com/framework/docs/providers/aws/).
+# BackupSystem_SQS_SNS_S3_DynamoDB_AWS
+Sistema de respaldo para archivos XML y PDF implementado con SQS, SNS, Typescript, S3, DynamoDB, Api Gateway, Cloudwatch, Systems Manager Parameter Store, Serverless-Framework, Lambda, entre otros.
 
-## Installation/deployment instructions
+<br>
 
-Depending on your preferred package manager, follow the instructions below to deploy your project.
+## Índice 📜
 
-> **Requirements**: NodeJS `lts/fermium (v.14.15.0)`. If you're using [nvm](https://github.com/nvm-sh/nvm), run `nvm use` to ensure you're using the same Node version in local and in your lambda's runtime.
+<details>
+ <summary> Ver </summary>
+ 
+ <br>
+ 
+### Sección 1)  Descripción, configuración y tecnologías
 
-### Using NPM
+ - [1.0) Descripción del Proyecto.](#10-descripción-)
+ - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
+ - [1.2) Configuración del proyecto desde cero](#12-configuración-del-proyecto-desde-cero-)
+ - [1.3) Tecnologías.](#13-tecnologías-)
 
-- Run `npm i` to install the project dependencies
-- Run `npx sls deploy` to deploy this stack to AWS
 
-### Using Yarn
+### Sección 2) Endpoints y Ejemplos 
+ 
+ - [2.0) EndPoints y recursos.](#20-endpoints-y-recursos-)
 
-- Run `yarn` to install the project dependencies
-- Run `yarn sls deploy` to deploy this stack to AWS
+### Sección 3) Prueba de funcionalidad y Referencias
+ 
+ - [3.0) Prueba de funcionalidad.](#30-prueba-de-funcionalidad-)
+ - [3.1) Referencias.](#31-referencias-)
 
-## Test your service
 
-This template contains a single lambda function triggered by an HTTP request made on the provisioned API Gateway REST API `/hello` route with `POST` method. The request body must be provided as `application/json`. The body structure is tested by API Gateway against `src/functions/hello/schema.ts` JSON-Schema definition: it must contain the `name` property.
+<br>
 
-- requesting any other path than `/hello` with any other method than `POST` will result in API Gateway returning a `403` HTTP error code
-- sending a `POST` request to `/hello` with a payload **not** containing a string property named `name` will result in API Gateway returning a `400` HTTP error code
-- sending a `POST` request to `/hello` with a payload containing a string property named `name` will result in API Gateway returning a `200` HTTP status code with a message saluting the provided name and the detailed event processed by the lambda
+</details>
 
-> :warning: As is, this template, once deployed, opens a **public** endpoint within your AWS account resources. Anybody with the URL can actively execute the API Gateway endpoint and the corresponding lambda. You should protect this endpoint with the authentication method of your choice.
 
-### Locally
 
-In order to test the hello function locally, run the following command:
+<br>
 
-- `npx sls invoke local -f hello --path src/functions/hello/mock.json` if you're using NPM
-- `yarn sls invoke local -f hello --path src/functions/hello/mock.json` if you're using Yarn
+## Sección 1)  Descripción, configuración y tecnologías
 
-Check the [sls invoke local command documentation](https://www.serverless.com/framework/docs/providers/aws/cli-reference/invoke-local/) for more information.
 
-### Remotely
+### 1.0) Descripción [🔝](#índice-) 
 
-Copy and replace your `url` - found in Serverless `deploy` command output - and `name` parameter in the following `curl` command in your terminal or in Postman to test your newly deployed application.
+<details>
+  <summary>Ver</summary>
+ <br>
+
+### 1.0.0) Descripción General
+
+`Importante`: Hay alertas de seguridad de dependabot que apuntan contra el plugin "serverless-dynamodb-local". No aplicar parches de seguridad a dicho plugin, ya que la versión `^1.0.2` tiene problemas al momento de la creación de tablas y ejecución del servicio de dynamo. Se recomienda mantener la última versión estable `^0.2.40` con las alertas de seguridad generadas.
+
+
+ 
+### 1.0.1) Descripción Arquitectura y Funcionamiento
+
+
+<br>
+
+</details>
+
+
+### 1.1) Ejecución del Proyecto [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+  <br>
+ 
+* Creamos un entorno de trabajo a través de algún ide, podemos o no crear una carpeta raíz para el proyecto, nos posicionamos sobre la misma
+```git
+cd 'projectRootName'
+```
+* Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
+```git
+git clone https://github.com/andresWeitzel/BackupSystem_SQS_SNS_S3_DynamoDB_AWS
+```
+* Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download)
+* Instalamos Serverless Framework de forma global si es que aún no lo hemos realizado
+```git
+npm install -g serverless
+```
+* Verificamos la versión de Serverless instalada
+```git
+sls -v
+```
+* Instalamos todos los paquetes necesarios
+```git
+npm i
+```
+`Importante`: Hay alertas de seguridad de dependabot que apuntan contra el plugin "serverless-dynamodb-local". No aplicar parches de seguridad a dicho plugin, ya que la versión `^1.0.2` tiene problemas al momento de la creación de tablas y ejecución del servicio de dynamo. Se recomienda mantener la última versión estable `^0.2.40` con las alertas de seguridad generadas.
+* Creamos un archivo para almacenar las variables ssm utilizadas en el proyecto (Más allá que sea un proyecto con fines no comerciales es una buena práctica utilizar variables de entorno).
+  * Click der sobre la raíz del proyecto
+  * New file
+  * Creamos el archivo con el name `serverless_ssm.yml` (si es que no está). Este deberá estar a la misma altura que el serverless.yml
+  * Añadimos las ssm necesarias dentro del archivo.
+  ```git
+    # Keys
+    X_API_KEY: "f98d8cd98h73s204e3456998ecl9427j"
+
+    BEARER_TOKEN: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+
+    # API VALUES
+    API_VERSION : 'v1'
+
+    # DYNAMODB VALUES
+    DYNAMO_PAYMENTS_TABLE_NAME : 'payments-table'
+    API_ENDPOINT_PAYMENTS_NAME : 'payments'
+    REGION : 'us-east-1'
+    ACCESS_KEY_RANDOM_VALUE: 'xxxx'
+    SECRET_KEY_RANDOM_VALUE: 'xxxx'
+    DYNAMO_ENDPOINT: "http://localhost:8000"
+  ```  
+* El siguiente script configurado en el package.json del proyecto es el encargado de
+   * Levantar serverless-offline (serverless-offline)
+ ```git
+  "scripts": {
+    "serverless-offline": "sls offline start",
+    "start": "npm run serverless-offline"
+  },
+```
+* Ejecutamos la app desde terminal.
+```git
+npm start
+```
+ 
+ 
+<br>
+
+</details>
+
+
+### 1.2) Configuración del proyecto desde cero [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ <br>
+ 
+  
+* Creamos un entorno de trabajo a través de algún ide, luego de crear una carpeta nos posicionamos sobre la misma
+```git
+cd 'projectName'
+```
+* Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download)
+* Instalamos Serverless Framework de forma global si es que aún no lo tenemos instalado.
+```git
+npm install -g serverless
+```
+* Verificamos la versión de Serverless instalada
+```git
+sls -v
+```
+* Inicializamos un template ts de serverles
+```git
+serverless create --template aws-nodejs-typescript
+```
+* Comprobamos la versión de typescript
+```git
+tsc -v
+```
+* Instalamos los paquetes necesarios
+```git
+npm i
+```
+* Por defecto tendremos un serverless.ts, según el gusto y configuración se puede trabajar con el mismo, para este caso, se modifica a serverless.yml y se pasa la plantilla base.
+* Modificaremos la plantilla inicial. Cambiamos `serverless.ts` por `serverless.yml` para las configs estandarizadas.
+* Reemplazamos la plantila serverless.ts inicial por la siguiente como modelo (cambiar nombre, etc) según la creada...
+```yml
+
+service: nombre
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region : us-west-1
+  memorySize: 512
+  timeout : 10
+
+plugins:
+
+
+functions:
+  functions:
+    hello:
+      handler: src/functions/hello/handler.ts
+      events:
+        - http:
+            path: /test
+            method: POST
+            private: true  
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+    lambdaPort: 4002    
+  serverless-offline-ssm:
+    stages:
+      - dev
+  dynamodb:
+    stages:
+      - dev
+```
+* Instalamos serverless offline 
+```git
+npm i serverless-offline --save-dev
+```
+* Agregamos el plugin dentro del serverless.yml
+```yml
+plugins:
+  - serverless-offlline
+``` 
+* Instalamos serverless ssm 
+```git
+npm i serverless-offline-ssm --save-dev
+```
+* Agregamos el plugin dentro del serverless.yml
+```yml
+plugins:
+  - serverless-offlline-ssm
+```
+* Instalamos S3 local
+```git
+npm install serverless-s3-local --save-dev
+```
+ * Agregamos el plugin dentro del serverless.yml
+```yml
+plugins:
+  - serverless-s3-local
+```
+* Instalamos el Cliente s3
+```git
+npm install @aws-sdk/client-s3
+```
+* Instalamos esbuild para el compilado entre js y ts
+```git
+npm i serverless-esbuild
+```  
+* Instalamos el plugin para el uso de dynamodb en local (No el servicio de dynamoDB, este viene configurado en los archivos dentro de .dynamodb).
+`Importante`: Hay alertas de seguridad de dependabot que apuntan contra el plugin "serverless-dynamodb-local". No aplicar parches de seguridad a dicho plugin, ya que la versión `^1.0.2` tiene problemas al momento de la creación de tablas y ejecución del servicio de dynamo. Se recomienda mantener la última versión estable `^0.2.40` con las alertas de seguridad generadas.
+```git
+npm install serverless-dynamodb-local --save-dev
+```
+ * Agregamos el plugin dentro del serverless.yml
+```yml
+plugins:
+  - serverless-dynamodb-local
+```
+* Instalamos el sdk client de dynamodb para las operaciones de db necesarias
+``` git
+npm install @aws-sdk/client-dynamodb
+```     
+* Instalamos el sdk lib de dynamodb para las operaciones de db necesarias
+``` git
+npm i @aws-sdk/lib-dynamodb
+```
+* Debemos descargar el .jar junto con su config para ejecutar el servicio de dynamodb. [Descargar aquí](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html#DynamoDBLocal.DownloadingAndRunning.title)
+* Una vez descargado el .jar en formato .tar descomprimimos y copiamos todo su contenido dentro de la carpeta `.dynamodb` (La creamos a la misma altura que el directorio src, caso de no tenerla).
+* Usaremos [git](https://www.hostinger.com.ar/tutoriales/instalar-git-en-distintos-sistemas-operativos) como control de versiones. Nos posicionamos en la app e inicializamos git
+```git
+git init
+```
+* Creamos el repositorio en github (sin readme) y agregamos la url del repositorio creado (ej: la siguiente)
+```git
+git remote add origin https://github.com/andresWeitzel/BackupSystem_SQS_SNS_S3_DynamoDB_AWS
+```
+* Traemos los cambios del remoto, agregamos los nuevos cambios en local, commitiamos y los subimos al repo.
+```git
+git pull origin master
+git add *
+git commit -m "Add app config"
+git push origin master
+```
+* El siguiente script configurado en el package.json del proyecto es el encargado de
+Levantar serverless-offline (serverless-offline)
+```git
+ "scripts": {
+   "serverless-offline": "sls offline start",
+   "start": "npm run serverless-offline"
+ },
+```
+* Ejecutamos la app desde terminal.
+```git
+npm start
+```
+* Deberíamos esperar un output por consola con los siguiente servicios levantados cuando se ejecuta el comando anterior
+```git
+> crud-amazon-dynamodb-aws@1.0.0 start
+> npm run serverless-offline
+
+> crud-amazon-dynamodb-aws@1.0.0 serverless-offline
+> sls offline start
+
+serverless-offline-ssm checking serverless version 3.31.0.
+Dynamodb Local Started, Visit: http://localhost:8000/shell
+DynamoDB - created table payments-table
+
+etc.....
+```
+* Ya tenemos una app funcional con una estructura inicial definida por Serverless-Framework. La aplicación queda deployada en http://localhost:4002 y podemos testear el endpoint declarado en el serverless desde postman
+* `Aclaración` : El resto de las modificaciones aplicadas sobre la plantilla inicial no se describen por temas de simplificación de doc. Para más info consultar el tutorial de [Serverless-framework](https://www.serverless.com/) para el uso de servicios, plugins, etc.
+
+<br>
+
+</details>
+
+
+### 1.3) Tecnologías [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ <br>
+
+| **Tecnologías** | **Versión** | **Finalidad** |               
+| ------------- | ------------- | ------------- |
+| [SDK](https://www.serverless.com/framework/docs/guides/sdk/) | 4.3.2  | Inyección Automática de Módulos para Lambdas |
+| [Serverless Framework Core v3](https://www.serverless.com//blog/serverless-framework-v3-is-live) | 3.23.0 | Core Servicios AWS |
+| [Systems Manager Parameter Store (SSM)](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) | 3.0 | Manejo de Variables de Entorno |
+| [Amazon Api Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api | 
+| [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingBucket.html) | 3.0 | Contenedor de Objetos | 
+| [NodeJS](https://nodejs.org/en/) | 14.18.1  | Librería JS |
+| [VSC](https://code.visualstudio.com/docs) | 1.72.2  | IDE |
+| [Postman](https://www.postman.com/downloads/) | 10.11  | Cliente Http |
+| [CMD](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd) | 10 | Símbolo del Sistema para linea de comandos | 
+| [Git](https://git-scm.com/downloads) | 2.29.1  | Control de Versiones |
+
+</br>
+
+
+| **Plugin** | **Descripción** |               
+| -------------  | ------------- |
+| [Serverless Plugin](https://www.serverless.com/plugins/) | Librerías para la Definición Modular |
+| [serverless-offline](https://www.npmjs.com/package/serverless-offline) | Este complemento sin servidor emula AWS λ y API Gateway en entorno local |
+| [serverless-offline-ssm](https://www.npmjs.com/package/serverless-offline-ssm) |  busca variables de entorno que cumplen los parámetros de SSM en el momento de la compilación y las sustituye desde un archivo  |
+| [serverless-s3-local](https://www.serverless.com/plugins/serverless-s3-local) | complemento sin servidor para ejecutar clones de S3 en local
+
+</br>
+
+
+| **Extensión** |              
+| -------------  | 
+| Prettier - Code formatter |
+| YAML - Autoformatter .yml (alt+shift+f) |
+| TypeScript constructor generator - automatic constructor generator | 
+
+<br>
+
+</details>
+
+
+<br>
+
+
+## Sección 2) Endpoints y Ejemplos. 
+
+
+### 2.0) Endpoints y recursos [🔝](#índice-) 
+
+<details>
+  <summary>Ver</summary>
+<br>
+
+### 2.1.0) Variables en Postman
+
+| **Variable** | **Initial value** | **Current value** |               
+| ------------- | ------------- | ------------- |
+| base_url | http://localhost:4000  | http://localhost:4000 |
+| x-api-key | f98d8cd98h73s204e3456998ecl9427j  | f98d8cd98h73s204e3456998ecl9427j |
+| bearer_token | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c  | Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c |
+
+<br>
+
+<br>
+
+### 2.1.1) Crear un objeto pago
+#### Request
+``` postman
 
 ```
-curl --location --request POST 'https://myApiEndpoint/dev/hello' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "name": "Frederic"
-}'
+
+#### Response
+``` postman
 ```
 
-## Template features
+<br>
 
-### Project structure
+<br>
 
-The project code base is mainly located within the `src` folder. This folder is divided in:
-
-- `functions` - containing code base and configuration for your lambda functions
-- `libs` - containing shared code base between your lambdas
-
-```
-.
-├── src
-│   ├── functions               # Lambda configuration and source code folder
-│   │   ├── hello
-│   │   │   ├── handler.ts      # `Hello` lambda source code
-│   │   │   ├── index.ts        # `Hello` lambda Serverless configuration
-│   │   │   ├── mock.json       # `Hello` lambda input parameter, if any, for local invocation
-│   │   │   └── schema.ts       # `Hello` lambda input event JSON-Schema
-│   │   │
-│   │   └── index.ts            # Import/export of all lambda configurations
-│   │
-│   └── libs                    # Lambda shared code
-│       └── apiGateway.ts       # API Gateway specific helpers
-│       └── handlerResolver.ts  # Sharable library for resolving lambda handlers
-│       └── lambda.ts           # Lambda middleware
-│
-├── package.json
-├── serverless.ts               # Serverless service file
-├── tsconfig.json               # Typescript compiler configuration
-├── tsconfig.paths.json         # Typescript paths
-└── webpack.config.js           # Webpack configuration
+### 2.1.2) Obtener un objecto pago
+#### Request
+``` postman
 ```
 
-### 3rd party libraries
+#### Response
+``` postman
+```
 
-- [json-schema-to-ts](https://github.com/ThomasAribart/json-schema-to-ts) - uses JSON-Schema definitions used by API Gateway for HTTP request validation to statically generate TypeScript types in your lambda's handler code base
-- [middy](https://github.com/middyjs/middy) - middleware engine for Node.Js lambda. This template uses [http-json-body-parser](https://github.com/middyjs/middy/tree/master/packages/http-json-body-parser) to convert API Gateway `event.body` property, originally passed as a stringified JSON, to its corresponding parsed object
-- [@serverless/typescript](https://github.com/serverless/typescript) - provides up-to-date TypeScript definitions for your `serverless.ts` service file
+<br>
 
-### Advanced usage
+<br>
 
-Any tsconfig.json can be used, but if you do, set the environment variable `TS_NODE_CONFIG` for building the application, eg `TS_NODE_CONFIG=./tsconfig.app.json npx serverless webpack`
+### 2.1.3) Actualizar un objeto pago
+#### Request
+``` postman
+```
+
+#### Response
+``` postman
+```
+
+<br>
+
+<br>
+
+### 2.1.4) Eliminar un objeto pago
+#### Request
+``` postman
+```
+
+#### Response
+``` postman
+```
+
+<br>
+
+</details>
+
+<br>
+
+
+## Sección 3) Prueba de funcionalidad y Referencias. 
+
+
+### 3.0) Prueba de funcionalidad [🔝](#índice-) 
+
+<details>
+  <summary>Ver</summary>
+<br>
+
+</details>
+
+
+### 3.1) Referencias [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ <br>
+
+#### Herramientas 
+ * [Herramienta de Diseño AWS app.diagrams.net](https://app.diagrams.net/?splash=0&libs=aws4)
+ * [Formateo y validador online json format](https://jsonformatter.org/)
+
+#### Api Gateway
+ * [Buenas Prácticas Api-Gateway](https://docs.aws.amazon.com/whitepapers/latest/best-practices-api-gateway-private-apis-integration/rest-api.html)
+ * [Creación de Api-keys personalizadas](https://towardsaws.com/protect-your-apis-by-creating-api-keys-using-serverless-framework-fe662ad37447)
+
+ #### Librerías
+ * [Validación de campos](https://www.npmjs.com/package/node-input-validator)
+
+<br>
+
+</details>

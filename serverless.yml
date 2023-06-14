@@ -26,6 +26,7 @@ provider:
       roleManagedExternally: false
 
 plugins:
+  - serverless-dynamodb-local
   - serverless-esbuild
   - serverless-s3-local
   - serverless-offline-ssm
