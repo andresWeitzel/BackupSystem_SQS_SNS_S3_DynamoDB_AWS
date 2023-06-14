@@ -12,10 +12,27 @@
   API_PORT: '4000'
   API_STAGE: 'dev'
   API_VERSION : 'v1'
-  API_ENDPOINT_XML_S3_NAME : 'xml-files-s3'
-  API_ENDPOINT_PDF_S3_NAME : 'pdf-files-s3'
+  API_ENDPOINT_XML_FILES_S3_NAME : 'xml-files-s3'
+  API_ENDPOINT_PDF_FILES_S3_NAME : 'pdf-files-s3'
 
   # Dynamodb database
-  DYNAMO_XML_TABLE_NAME : 'xml-files-table'
-  DYNAMO_PDF_TABLE_NAME : 'pdf-files-table'
+  DYNAMO_XML_FILES_TABLE_NAME : 'xml-files-table'
+  DYNAMO_PDF_FILES_TABLE_NAME : 'pdf-files-table'
 
+  # XML FILES Bucket s3
+  XML_FILES_S3_NAME: XML_FILES_S3
+  XML_FILES_S3_KEY: xmlFilesS3.json
+
+  # PDF FILES Bucket s3
+  PDF_FILES_S3_NAME: PDF_FILES_S3
+  PDF_FILES_S3_KEY: pdfFilesS3.json
+
+  # S3 Client
+  # This specific key is required when working offline
+  S3_CLIENT_ACCESS_KEY_ID: S3RVER
+  S3_CLIENT_SECRET_ACCESS_KEY: S3RVER
+  S3_CLIENT_ENDPOINT: http://localhost:4569
+      
+  # Bucket S3 Config
+  S3_HOST: localhostdir
+  S3_DIRECTORY: /AWS-S3/storage
