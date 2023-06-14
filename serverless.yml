@@ -1,0 +1,58 @@
+service: backupsystem-sqs-sns-s3-dynamodb-aws
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+  memorySize: 512
+  timeout: 10
+  environment: ${file(./serverless_ssm.yml)}
+  apiGateway:
+    apiKeys:
+      - name: xApiKey
+        value: ${file(./serverless_ssm.yml):X_API_KEY}
+  logs:
+    # Enable REST API logs
+    restApi:
+      accessLogging: true
+      format: "requestId: $context.requestId"
+      executionLogging: true
+      level: INFO
+      fullExecutionData: true
+      role: arn:aws:iam::xxxx:role
+      roleManagedExternally: false
+
+plugins:
+  - serverless-esbuild
+  - serverless-s3-local
+  - serverless-offline-ssm
+  - serverless-offline
+
+functions:
+  # #DATABASE TEST
+  # databaseTestConnection:
+  #   handler: src/controllers/db/connection.handler
+  #   description: Function in charge of checking the connection to the db
+  #   events:
+  #     - http:
+  #         path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_PRODUCTS_NAME}/db-connection
+  #         method: get
+  #         private: true
+  sources:
+  - ${file(src/resources/api-gateway.yml)}
+  - ${file(src/resources/bucket-s3.yml)}
+
+custom:
+  s3:
+    host: ${file(./serverless_ssm.yml):S3_HOST}
+    directory: ${file(./serverless_ssm.yml):S3_DIRECTORY}
+  serverless-offline-ssm:
+    stages:
+      - dev
+    ssm: ${file(./serverless_ssm.yml)}
+  serverless-offline:
+    httpPort: 4000
+    lambdaPort: 4002    
