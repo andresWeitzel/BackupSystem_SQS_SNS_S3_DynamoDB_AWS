@@ -1,0 +1,21 @@
+  # Keys
+  X_API_KEY : 'f98d8cd98h73s204e3456998ecl9427j'
+  BEARER_TOKEN : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+
+  # AWS credencials
+  REGION: us-east-1
+  AWS_ACCESS_KEY_ID : 'xxxx'
+  AWS_SECRET_ACCESS_KEY: 'xxxx'
+
+  # API VALUES
+  API_HOST : 'localhost'
+  API_PORT: '4000'
+  API_STAGE: 'dev'
+  API_VERSION : 'v1'
+  API_ENDPOINT_XML_S3_NAME : 'xml-files-s3'
+  API_ENDPOINT_PDF_S3_NAME : 'pdf-files-s3'
+
+  # Dynamodb database
+  DYNAMO_XML_TABLE_NAME : 'xml-files-table'
+  DYNAMO_PDF_TABLE_NAME : 'pdf-files-table'
+

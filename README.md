@@ -96,21 +96,27 @@ npm i
   * Creamos el archivo con el name `serverless_ssm.yml` (si es que no está). Este deberá estar a la misma altura que el serverless.yml
   * Añadimos las ssm necesarias dentro del archivo.
   ```git
-    # Keys
-    X_API_KEY: "f98d8cd98h73s204e3456998ecl9427j"
+     # Keys
+  X_API_KEY : 'f98d8cd98h73s204e3456998ecl9427j'
+  BEARER_TOKEN : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
 
-    BEARER_TOKEN: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+  # AWS credencials
+  REGION: us-east-1
+  AWS_ACCESS_KEY_ID : 'xxxx'
+  AWS_SECRET_ACCESS_KEY: 'xxxx'
 
-    # API VALUES
-    API_VERSION : 'v1'
+  # API VALUES
+  API_HOST : 'localhost'
+  API_PORT: '4000'
+  API_STAGE: 'dev'
+  API_VERSION : 'v1'
+  API_ENDPOINT_XML_S3_NAME : 'xml-files-s3'
+  API_ENDPOINT_PDF_S3_NAME : 'pdf-files-s3'
 
-    # DYNAMODB VALUES
-    DYNAMO_PAYMENTS_TABLE_NAME : 'payments-table'
-    API_ENDPOINT_PAYMENTS_NAME : 'payments'
-    REGION : 'us-east-1'
-    ACCESS_KEY_RANDOM_VALUE: 'xxxx'
-    SECRET_KEY_RANDOM_VALUE: 'xxxx'
-    DYNAMO_ENDPOINT: "http://localhost:8000"
+  # Dynamodb database
+  DYNAMO_XML_TABLE_NAME : 'xml-files-table'
+  DYNAMO_PDF_TABLE_NAME : 'pdf-files-table'
+
   ```  
 * El siguiente script configurado en el package.json del proyecto es el encargado de
    * Levantar serverless-offline (serverless-offline)
@@ -373,56 +379,6 @@ etc.....
 
 <br>
 
-<br>
-
-### 2.1.1) Crear un objeto pago
-#### Request
-``` postman
-
-```
-
-#### Response
-``` postman
-```
-
-<br>
-
-<br>
-
-### 2.1.2) Obtener un objecto pago
-#### Request
-``` postman
-```
-
-#### Response
-``` postman
-```
-
-<br>
-
-<br>
-
-### 2.1.3) Actualizar un objeto pago
-#### Request
-``` postman
-```
-
-#### Response
-``` postman
-```
-
-<br>
-
-<br>
-
-### 2.1.4) Eliminar un objeto pago
-#### Request
-``` postman
-```
-
-#### Response
-``` postman
-```
 
 <br>
 
