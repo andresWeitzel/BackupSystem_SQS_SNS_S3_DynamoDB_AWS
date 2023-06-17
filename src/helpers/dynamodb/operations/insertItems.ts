@@ -1,14 +1,13 @@
 //External
 import { PutCommand } from "@aws-sdk/lib-dynamodb";
-import {marshall, unmarshall} from "@aws-sdk/util-dynamodb";
 //Helpers
 import {
     dynamoDBClient
 }  from "../config/dynamoDBClient";
 //Const-vars 
-let dynamo;
-let metadata;
-let requestId;
+let dynamo:any;
+let metadata:any;
+let requestId:any;
 
 
 /**
@@ -17,7 +16,7 @@ let requestId;
  * @param {Object} items object json type
  * @returns a metadata with the information of the operation
  */
-export const insertItems = async (tableName,items) => {
+export const insertItems = async (tableName:string,items:any) => {
     try {
 
         requestId=null;

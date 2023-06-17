@@ -8,6 +8,7 @@ import { formatToJson } from "src/helpers/format/formatToJson";
 import { generateUuidV4 } from "src/helpers/math/generateUuid";
 import { validateObject } from "src/helpers/validations/models/validateObject";
 import { formatToBigint } from "src/helpers/format/formatToNumber";
+import { insertItems } from "src/helpers/dynamodb/operations/insertItems";
 
 
 //Const/Vars
@@ -15,7 +16,7 @@ let eventHeaders: any;
 let checkEventHeadersAndKeys: any;
 let msg: string;
 let code: number;
-const PAYMENTS_TABLE_NAME = process.env.DYNAMO_PAYMENTS_TABLE_NAME;
+const MINING_PLANTS_TABLE_NAME = process.env.DYNAMO_MINING_PLANTS_TABLE_NAME;
 
 
 /**
@@ -37,7 +38,33 @@ module.exports.insert = async (event: any) => {
         }
         //-- end with validation headers and keys  ---
 
-        return await requestResult(statusCode.OK, 'ok');
+
+        let eventBody = await formatToJson(event.body);
+        let item;
+        let ss;
+
+
+        for (let i of eventBody) {
+
+            item = {
+                uuid: i.geom,
+                nombre: i.nombre,
+                empresa: i.empresa,
+                tipo_yacimiento: (i.tipo_yacim ==null) ? "-" : i.tipo_yacim,
+                estado_vigente: i.estado,
+                mineral_principal: i.mineral_pr,
+                geolocalizacion: i.geojson
+            }
+            ss = await insertItems(MINING_PLANTS_TABLE_NAME, item);
+        }
+
+
+        if (ss != null) {
+            return await requestResult(statusCode.OK, ss);
+        } else {
+            return await requestResult(statusCode.BAD_REQUEST, 'Bad Request');
+        }
+
 
 
     } catch (error) {

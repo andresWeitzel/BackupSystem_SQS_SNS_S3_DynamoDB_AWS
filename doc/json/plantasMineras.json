@@ -1,0 +1,740 @@
+[
+ {
+   "geom": "0104000020E6100000010000000101000000713D0AD7A3B050C03D0AD7A370BD37C0",
+   "nombre": "Cauchari-Olaroz",
+   "empresa": "MINERA EXAR S.A.",
+   "tipo_yacim": "",
+   "estado": "Construcción",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.76,-23.74]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000D7A3703D0AA750C09A99999999593BC0",
+   "nombre": "Bajo La Alumbrera",
+   "empresa": "MINERA ALUMBRERA LIMITED",
+   "tipo_yacim": "",
+   "estado": "Mantenimiento",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.61,-27.35]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000448B6CE7FB0951C0DF4F8D976E1239C0",
+   "nombre": "Río Grande",
+   "empresa": "LITHEA INC. SUCURSAL ARGENTINA",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.156,-25.072]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000085EB51B81E3551C0B81E85EB513845C0",
+   "nombre": "Navidad",
+   "empresa": "MINERA ARGENTA S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.83,-42.44]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000006666666666C650C03D0AD7A3707D39C0",
+   "nombre": "Fenix",
+   "empresa": "MINERA DEL ALTIPLANO S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.1,-25.49]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000EC51B81E85AB50C08FC2F5285C4F3BC0",
+   "nombre": "Farallón Negro",
+   "empresa": "YACIMIENTOS MINEROS DE AGUA DE DIONISIO (YMAD)",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.68,-27.31]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000052B81E85EBA150C0F6285C8FC2B536C0",
+   "nombre": "Chinchillas-Pirquitas",
+   "empresa": "Puna Operations Inc",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.53,-22.71]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000033333333331351C08FC2F5285CCF38C0",
+   "nombre": "Mariana",
+   "empresa": "Mariana Lithium Co. Ltd.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.3,-24.81]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000A4703D0AD76351C000000000000040C0",
+   "nombre": "Cerro Blanco",
+   "empresa": "Argentina Mining Limited",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.56,-32]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000005C8FC2F5282C51C014AE47E17AB445C0",
+   "nombre": "Meseta Central",
+   "empresa": "Ur América Ltd.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Uranio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.69,-43.41]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000744694F6065F51C0AE47E17A147E42C0",
+   "nombre": "Potasio Río Colorado",
+   "empresa": "Potasio Río Colorado S.A.",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Potasio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.4848,-36.985]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000007B14AE47E12A51C014AE47E17AF445C0",
+   "nombre": "Laguna Colorada",
+   "empresa": "CNEA",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Uranio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.67,-43.91]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000A4703D0AD72351C0F6285C8FC21548C0",
+   "nombre": "Pingüino",
+   "empresa": "Austral Gold",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.56,-48.17]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000B81E85EB51A851C0D7A3703D0A9742C0",
+   "nombre": "Andacollo",
+   "empresa": "TRIDENT SOUTHERN EXPLORATIONS DE ARGENTINA S.R.L.",
+   "tipo_yacim": "",
+   "estado": "Construcción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.63,-37.18]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000006DE7FBA9F17250C0A4703D0AD76344C0",
+   "nombre": "San Roque",
+   "empresa": "Marifil S.A",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-65.796,-40.78]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000CDCCCCCCCC7C51C01F85EB51B85E3DC0",
+   "nombre": "Veladero",
+   "empresa": "MINERA ARGENTINA GOLD S.R.L",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.95,-29.37]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000295C8FC2F52851C0F6285C8FC2B53DC0",
+   "nombre": "Gualcamayo",
+   "empresa": "MINAS ARGENTINAS S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.64,-29.71]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000B81E85EB516851C0713D0AD7A3303FC0",
+   "nombre": "Casposo",
+   "empresa": "TROY RESOURCES ARGENTINA LTD (EX. INTREPID)",
+   "tipo_yacim": "",
+   "estado": "Mantenimiento",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.63,-31.19]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000A4703D0AD79351C0D7A3703D0A5747C0",
+   "nombre": "San José",
+   "empresa": "MINERA SANTA CRUZ S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.31,-46.68]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000005C8FC2F5286C50C0F6285C8FC23537C0",
+   "nombre": "Aguilar",
+   "empresa": "COMPAÑIA MINERA AGUILAR S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Plomo",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-65.69,-23.21]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000052B81E85EBD150C0D7A3703D0A1746C0",
+   "nombre": "Laguna Salada",
+   "empresa": "MAPLE EXPLORATION AND DEVELOPMENT INC.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Uranio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.28,-44.18]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000EC51B81E85DB50C085EB51B81E853AC0",
+   "nombre": "Kachi",
+   "empresa": "Morena del Valle S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.43,-26.52]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000E17A14AE479150C0E17A14AE47613BC0",
+   "nombre": "Agua Rica",
+   "empresa": "MINERA AGUA RICA LLC - (SUCURSAL ARGENTINA)",
+   "tipo_yacim": "",
+   "estado": "Prefactibilidad",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.27,-27.38]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000009A999999997951C0C3F5285C8F023EC0",
+   "nombre": "Del Carmen",
+   "empresa": "MINERA DEL CARMEN S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.9,-30.01]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000E17A14AE476151C00AD7A3703D8A3EC0",
+   "nombre": "Valle de Chita",
+   "empresa": "MINERA SUD ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.52,-30.54]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000001F85EB51B89E51C07B14AE47E17A3FC0",
+   "nombre": "Altar",
+   "empresa": "MINERA PEREGRINE ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.48,-31.48]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000007B14AE47E15A51C03D0AD7A370DD44C0",
+   "nombre": "Calcatreu",
+   "empresa": "MINERA AQUILINE ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.42,-41.73]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003D0AD7A3707D51C03D0AD7A370BD47C0",
+   "nombre": "Virginia",
+   "empresa": "MINERA DEL SOL S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.96,-47.48]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000008FC2F5285CDF50C0AE47E17A14CE47C0",
+   "nombre": "Las Calandrias",
+   "empresa": "MINERA MARIANA ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.49,-47.61]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000D7A3703D0A5751C0EC51B81E85EB47C0",
+   "nombre": "La Josefina",
+   "empresa": "CERRO CAZADOR S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.36,-47.84]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000000AD7A3703D7A51C0B81E85EB511848C0",
+   "nombre": "La Manchuria",
+   "empresa": "PATAGONIA GOLD S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.91,-48.19]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000006666666666C650C052B81E85EB1138C0",
+   "nombre": "Salar del Rincón",
+   "empresa": "RINCON MINING LIMITED",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.1,-24.07]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000B81E85EB51B850C014AE47E17A5439C0",
+   "nombre": "Sal de Vida",
+   "empresa": "Galaxy Lithium (Sal de Vida) S.A",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.88,-25.33]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000EC51B81E859B51C0C3F5285C8FC23FC0",
+   "nombre": "El Pachón",
+   "empresa": "PACHON S.A. MINERA",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.43,-31.76]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003D0AD7A370CD51C0713D0AD7A37045C0",
+   "nombre": "Suyai",
+   "empresa": "MINAS ARGENTINAS S.A.",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-71.21,-42.88]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000000AD7A3703D2A51C03333333333733BC0",
+   "nombre": "Tres Quebradas",
+   "empresa": "LIEX S.A.",
+   "tipo_yacim": "",
+   "estado": "Prefactibilidad",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.66,-27.45]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000F6285C8FC26551C03333333333733CC0",
+   "nombre": "Josemaría",
+   "empresa": "DESARROLLO DE PROSPECTOS MINEROS S.A.",
+   "tipo_yacim": "",
+   "estado": "Prefactibilidad",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.59,-28.45]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000B81E85EB516851C03D0AD7A3707D3CC0",
+   "nombre": "Filo del Sol",
+   "empresa": "FILO DEL SOL EXPLORACION S.A.",
+   "tipo_yacim": "",
+   "estado": "Prefactibilidad",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.63,-28.49]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000005C8FC2F5285C51C01F85EB51B81E40C0",
+   "nombre": "San Jorge",
+   "empresa": "MINERA SAN JORGE S.A.",
+   "tipo_yacim": "",
+   "estado": "Prefactibilidad",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.44,-32.24]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000001F85EB51B8BE50C01F85EB51B81E38C0",
+   "nombre": "Rincón",
+   "empresa": "Pepinnini Lithium Limited",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.98,-24.12]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000EC51B81E85FB50C00AD7A3703D4A38C0",
+   "nombre": "Pular",
+   "empresa": "Pepinnini Lithium Limited",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.93,-24.29]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000713D0AD7A3C050C048E17A14AE0739C0",
+   "nombre": "Gallego",
+   "empresa": "Everlight Resources",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.01,-25.03]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000009A999999990951C05C8FC2F5281C39C0",
+   "nombre": "Rio Grande",
+   "empresa": "Regulus Argentina S.A",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.15,-25.11]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000CDCCCCCCCCBC50C0B81E85EB513839C0",
+   "nombre": "Sal de Oro",
+   "empresa": "POSCO ARGENTINA S.A",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.95,-25.22]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000014AE47E17AC450C0B81E85EB513839C0",
+   "nombre": "Salar del Hombre Muerto Norte",
+   "empresa": "NRG Metals Inc.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.07,-25.22]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000EC51B81E857B50C05C8FC2F5289C39C0",
+   "nombre": "Don Otto",
+   "empresa": "CNEA",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Uranio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-65.93,-25.61]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000713D0AD7A3B050C03D0AD7A3703D39C0",
+   "nombre": "Sal de Los Ángeles",
+   "empresa": "POTASIO Y LITIO DE ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.76,-25.24]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000C3F5285C8FB250C085EB51B81E4539C0",
+   "nombre": "Diablillos",
+   "empresa": "PACIFIC RIM MINING CORPORATION ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.79,-25.27]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000AE47E17A148E51C09A99999999193FC0",
+   "nombre": "Los Azules",
+   "empresa": "MINERA ANDES S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.22,-31.1]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003B014D840DEF50C05227A089B09138C0",
+   "nombre": "Taca Taca",
+   "empresa": "CORRIENTE ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Cobre",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.7352,-24.5691]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000D7A3703D0A7751C0713D0AD7A3303DC0",
+   "nombre": "Taguas",
+   "empresa": "COMPAÑIA MINERA PIUQUENES S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.86,-29.19]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000052B81E85EBA150C0F6285C8FC2B536C0",
+   "nombre": "Puna Operation",
+   "empresa": "Puna Operations Inc",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.53,-22.71]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000066666666669650C052B81E85EB9136C0",
+   "nombre": "Ajedrez",
+   "empresa": "Espiritu de Los Andes S.A",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Au aluvional",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.35,-22.57]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000F6285C8FC29550C0AE47E17A146E36C0",
+   "nombre": "Córdoba",
+   "empresa": "Gasmarra Mineria S.A",
+   "tipo_yacim": "",
+   "estado": "Construcción",
+   "mineral_pr": "Au aluvional",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.34,-22.43]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003333333333B350C0C3F5285C8F4237C0",
+   "nombre": "Providencia",
+   "empresa": "Canepa Humberto Julio",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.8,-23.26]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000000AD7A3703D4A51C014AE47E17A5448C0",
+   "nombre": "Claudia",
+   "empresa": "MINERA DEL SOL S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.16,-48.66]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000048E17A14AE1751C0E17A14AE472142C0",
+   "nombre": "Don Sixto",
+   "empresa": "COGNITO LIMITED - SUCURSAL ARGENTINA",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.37,-36.26]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000D7A3703D0A5751C0E17A14AE47A142C0",
+   "nombre": "Potasio",
+   "empresa": "BUNGE Y SERVICIOS DE MINERÍA",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Potasio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.36,-37.26]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003333333333B350C0D7A3703D0AF743C0",
+   "nombre": "Amarillo Grande",
+   "empresa": "MINERA CIELO AZUL S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Uranio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.8,-39.93]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000066666666662651C014AE47E17A5441C0",
+   "nombre": "Sierra Pintada",
+   "empresa": "CNEA",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Uranio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.6,-34.66]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000009A999999996951C08FC2F5285CCF3DC0",
+   "nombre": "Jagüelito",
+   "empresa": "MEXPLORT PERFORACIONES MINERAS S.A.",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.65,-29.81]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000001F85EB51B8BE50C01F85EB51B81E38C0",
+   "nombre": "Salar del Rincón - Argosy",
+   "empresa": "Puna Mining S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.98,-24.12]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003333333333B350C08FC2F5285C4F38C0",
+   "nombre": "El Quevar",
+   "empresa": "SILEX ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.8,-24.31]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000EC51B81E85AB50C014AE47E17A9438C0",
+   "nombre": "Pastos Grandes",
+   "empresa": "PROYECTO PASTOS GRANDES S.A.",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.68,-24.58]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003D0AD7A370AD50C014AE47E17A9438C0",
+   "nombre": "PPG",
+   "empresa": "LITHEA INC. SUCURSAL ARGENTINA",
+   "tipo_yacim": "",
+   "estado": "Evaluación económica preliminar",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.71,-24.58]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000009A999999998951C0AE47E17A146E47C0",
+   "nombre": "Cerro Negro",
+   "empresa": "OROPLATA S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.15,-46.86]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000007B14AE47E1AA50C00AD7A3703D0A48C0",
+   "nombre": "Cerro Moro",
+   "empresa": "ESTELAR RESOURCES LIMITED - SUCURSAL ARGENTINA",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.67,-48.08]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000713D0AD7A31051C052B81E85EB3148C0",
+   "nombre": "Cerro Vanguardia",
+   "empresa": "CERRO VANGUARDIA S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.26,-48.39]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000000AD7A3703D6A51C0B81E85EB515848C0",
+   "nombre": "Mina Martha",
+   "empresa": "CERRO CAZADOR S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.66,-48.69]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000000000000006051C0A4703D0AD76348C0",
+   "nombre": "Manantial Espejo",
+   "empresa": "MINERA TRITON ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.5,-48.78]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000AE47E17A14AE50C03D0AD7A3707D37C0",
+   "nombre": "Olaroz",
+   "empresa": "SALES DE JUJUY S. A.",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.72,-23.49]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000008FC2F5285C7F51C014AE47E17A543DC0",
+   "nombre": "Lama",
+   "empresa": "BARRICK EXPLORACIONES ARGENTINA S.A.",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-69.99,-29.33]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000048E17A14AE5750C0F6285C8FC2D544C0",
+   "nombre": "Sierra Grande",
+   "empresa": "MCC MINERA SIERRA GRANDE S.A.",
+   "tipo_yacim": "",
+   "estado": "Mantenimiento",
+   "mineral_pr": "Hierro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-65.37,-41.67]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000003333333333A351C09A999999997947C0",
+   "nombre": "Lomada de Leiva",
+   "empresa": "PATAGONIA GOLD S.A.",
+   "tipo_yacim": "",
+   "estado": "Proceso de Cierre",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.55,-46.95]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000AE47E17A149E51C09A99999999F947C0",
+   "nombre": "Cap-Oeste",
+   "empresa": "PATAGONIA GOLD S.A.",
+   "tipo_yacim": "",
+   "estado": "Mantenimiento",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.47,-47.95]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000048E17A14AE1752C085EB51B81EC549C0",
+   "nombre": "Río Turbio",
+   "empresa": "YACIMIENTO CARBONIFERO RIO TURBIO",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Carbón",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-72.37,-51.54]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000713D0AD7A3F050C09A99999999D947C0",
+   "nombre": "Don Nicolás",
+   "empresa": "MINERA DON NICOLÁS",
+   "tipo_yacim": "",
+   "estado": "Producción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.76,-47.7]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000052B81E85EB3151C0713D0AD7A3B045C0",
+   "nombre": "Cerro Solo",
+   "empresa": "CNEA",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Uranio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-68.78,-43.38]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000C3F5285C8F9251C0F6285C8FC2B547C0",
+   "nombre": "Lejano",
+   "empresa": "COEUR ARGENTINA S.R.L. (ex polimet)",
+   "tipo_yacim": "",
+   "estado": "Exploración avanzada",
+   "mineral_pr": "Plata",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-70.29,-47.42]]}"
+ },
+ {
+   "geom": "0104000020E6100000010000000101000000AE47E17A14AE50C09A99999999D938C0",
+   "nombre": "Centenario-Ratones",
+   "empresa": "ERAMINE SUDAMERICA S.A.",
+   "tipo_yacim": "",
+   "estado": "Factibilidad",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.72,-24.85]]}"
+ },
+ {
+   "geom": "0104000020E610000001000000010100000052B81E85EBF150C014AE47E17A1439C0",
+   "nombre": "Lindero",
+   "empresa": "MANSFIELD MINERA S.A.",
+   "tipo_yacim": "",
+   "estado": "Construcción",
+   "mineral_pr": "Oro",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-67.78,-25.08]]}"
+ },
+ {
+   "geom": "0104000020E61000000100000001010000001F85EB51B8AE50C0AE47E17A14AE37C0",
+   "nombre": "Cauchari",
+   "empresa": "SOUTH AMERICAN SALARS S.A.",
+   "tipo_yacim": "",
+   "estado": "Prefactibilidad",
+   "mineral_pr": "Litio",
+   "geojson": "{\"type\":\"MultiPoint\",\"coordinates\":[[-66.73,-23.68]]}"
+ }
+]
