@@ -26,10 +26,10 @@ provider:
       roleManagedExternally: false
 
 plugins:
-  - serverless-dynamodb-local
   - serverless-esbuild
-  - serverless-s3-local
   - serverless-offline-ssm
+  - serverless-s3-local
+  - serverless-dynamodb-local
   - serverless-offline
 
 functions:
@@ -41,11 +41,15 @@ functions:
           path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/
           method: POST
           private: true
-  sources:
-  - ${file(src/resources/api-gateway.yml)}
-  - ${file(src/resources/bucket-s3.yml)}
 
 custom:
+  dynamodb:
+    stages:
+      - dev
+    start:
+      inMemory: true
+      migrate: true
+      seed: true
   s3:
     host: ${file(./serverless_ssm.yml):S3_HOST}
     directory: ${file(./serverless_ssm.yml):S3_DIRECTORY}
@@ -56,11 +60,8 @@ custom:
   serverless-offline:
     httpPort: 4000
     lambdaPort: 4002    
-  dynamodb:
-    stages:
-      - dev
-    start:
-      inMemory: true
-      migrate: true
-      seed: true
-      port: 8000  
+   
+resources:
+  - ${file(src/resources/api-gateway.yml)}
+  - ${file(src/resources/dynamodb-mining-plants-table.yml)}
+  - ${file(src/resources/bucket-s3.yml)}   
