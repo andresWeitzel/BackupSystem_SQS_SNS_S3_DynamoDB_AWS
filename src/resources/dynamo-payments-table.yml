@@ -1,21 +1,21 @@
 Resources:
-  DynamoPaymentsTable:
+  miningPlants:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: payments-table
+      TableName: mining-plants-table
       AttributeDefinitions:
         - AttributeName: uuid
           AttributeType: S
-        - AttributeName: description
+        - AttributeName: nombre
           AttributeType: S
-        - AttributeName: external_reference
+        - AttributeName: empresa
           AttributeType: S
-        - AttributeName: payment_method_id
+        - AttributeName: tipo_yacimiento
           AttributeType: S
-        - AttributeName: token
+        - AttributeName: estado_vigente
           AttributeType: S  
-        - AttributeName: transaction_amount
-          AttributeType: N
+        - AttributeName: mineral_principal
+          AttributeType: S
       KeySchema:
         - AttributeName: uuid
           KeyType: HASH
@@ -23,45 +23,45 @@ Resources:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1      
       GlobalSecondaryIndexes:
-        - IndexName: description
+        - IndexName: nombre
           KeySchema:
-            - AttributeName: description
+            - AttributeName: nombre
               KeyType: HASH    
           Projection:
             ProjectionType: ALL
           ProvisionedThroughput:
             ReadCapacityUnits: 1
             WriteCapacityUnits: 1                   
-        - IndexName: external_reference
+        - IndexName: empresa
           KeySchema:
-            - AttributeName: external_reference
+            - AttributeName: empresa
               KeyType: HASH    
           Projection:
             ProjectionType: ALL
           ProvisionedThroughput:
             ReadCapacityUnits: 1
             WriteCapacityUnits: 1
-        - IndexName: payment_method_id
+        - IndexName: tipo_yacimiento
           KeySchema:
-            - AttributeName: payment_method_id
+            - AttributeName: tipo_yacimiento
               KeyType: HASH    
           Projection:
             ProjectionType: ALL
           ProvisionedThroughput:
             ReadCapacityUnits: 1
             WriteCapacityUnits: 1 
-        - IndexName: token
+        - IndexName: estado_vigente
           KeySchema:
-            - AttributeName: token
+            - AttributeName: estado_vigente
               KeyType: HASH    
           Projection:
             ProjectionType: ALL
           ProvisionedThroughput:
             ReadCapacityUnits: 1
             WriteCapacityUnits: 1 
-        - IndexName: transaction_amount
+        - IndexName: mineral_principal
           KeySchema:
-            - AttributeName: transaction_amount
+            - AttributeName: mineral_principal
               KeyType: HASH    
           Projection:
             ProjectionType: ALL

@@ -1,3 +1,5 @@
+  #This file should not be in production for security and confidentiality issues
+  
   # Keys
   X_API_KEY : 'f98d8cd98h73s204e3456998ecl9427j'
   BEARER_TOKEN : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
@@ -12,20 +14,18 @@
   API_PORT: '4000'
   API_STAGE: 'dev'
   API_VERSION : 'v1'
-  API_ENDPOINT_XML_FILES_NAME : 'xml-files'
-  API_ENDPOINT_PDF_FILES_NAME : 'pdf-files'
+  API_ENDPOINT_MINING_PLANTS_NAME : 'mining-plants'
 
   # Dynamodb database
-  DYNAMO_XML_FILES_TABLE_NAME : 'xml-files-table'
-  DYNAMO_PDF_FILES_TABLE_NAME : 'pdf-files-table'
+  DYNAMO_MINING_PLANTS_TABLE_NAME : 'mining-plants-table'
 
-  # XML FILES Bucket s3
-  XML_FILES_S3_NAME: XML_FILES_S3
-  XML_FILES_S3_KEY: xmlFilesS3.json
+  # backup daily Bucket s3
+  BACKUP_DAILY_RECORDS_S3_NAME: BACKUP_DAILY_RECORDS_S3
+  BACKUP_DAILY_RECORDS_S3_KEY: backupDailyS3.json
 
   # PDF FILES Bucket s3
-  PDF_FILES_S3_NAME: PDF_FILES_S3
-  PDF_FILES_S3_KEY: pdfFilesS3.json
+  BACKUP_TOTAL_RECORDS_S3_NAME: BACKUP_TOTAL_RECORDS_S3
+  BACKUP_TOTAL_RECORDS_S3_KEY: backupTotalS3.json
 
   # S3 Client
   # This specific key is required when working offline

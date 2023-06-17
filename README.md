@@ -2,7 +2,10 @@
 ![Index app](./doc/assets/SNS_SQS_DYNAMO_S3.drawio.png)
 
 # BackupSystem_SQS_SNS_S3_DynamoDB_AWS
-Sistema de respaldo para archivos XML y PDF implementado con SQS, SNS, Typescript, S3, DynamoDB, Api Gateway, Cloudwatch, Systems Manager Parameter Store, Serverless-Framework, Lambda, entre otros.
+Sistema de respaldo para registros de plantas mineras implementado con SQS, SNS, Typescript, S3, DynamoDB, Api Gateway, Cloudwatch, Systems Manager Parameter Store, Serverless-Framework, Lambda, entre otros.
+
+* [Dataset Plantas Mineras](https://www.datos.gob.ar/dataset/energia-proyectos-mineros-ubicacion-aproximada)
+
 
 <br>
 
@@ -90,34 +93,6 @@ sls -v
 npm i
 ```
 `Importante`: Hay alertas de seguridad de dependabot que apuntan contra el plugin "serverless-dynamodb-local". No aplicar parches de seguridad a dicho plugin, ya que la versión `^1.0.2` tiene problemas al momento de la creación de tablas y ejecución del servicio de dynamo. Se recomienda mantener la última versión estable `^0.2.40` con las alertas de seguridad generadas.
-* Creamos un archivo para almacenar las variables ssm utilizadas en el proyecto (Más allá que sea un proyecto con fines no comerciales es una buena práctica utilizar variables de entorno).
-  * Click der sobre la raíz del proyecto
-  * New file
-  * Creamos el archivo con el name `serverless_ssm.yml` (si es que no está). Este deberá estar a la misma altura que el serverless.yml
-  * Añadimos las ssm necesarias dentro del archivo.
-  ```git
-     # Keys
-  X_API_KEY : 'f98d8cd98h73s204e3456998ecl9427j'
-  BEARER_TOKEN : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
-
-  # AWS credencials
-  REGION: us-east-1
-  AWS_ACCESS_KEY_ID : 'xxxx'
-  AWS_SECRET_ACCESS_KEY: 'xxxx'
-
-  # API VALUES
-  API_HOST : 'localhost'
-  API_PORT: '4000'
-  API_STAGE: 'dev'
-  API_VERSION : 'v1'
-  API_ENDPOINT_XML_S3_NAME : 'xml-files-s3'
-  API_ENDPOINT_PDF_S3_NAME : 'pdf-files-s3'
-
-  # Dynamodb database
-  DYNAMO_XML_TABLE_NAME : 'xml-files-table'
-  DYNAMO_PDF_TABLE_NAME : 'pdf-files-table'
-
-  ```  
 * El siguiente script configurado en el package.json del proyecto es el encargado de
    * Levantar serverless-offline (serverless-offline)
  ```git

@@ -33,12 +33,12 @@ plugins:
   - serverless-offline
 
 functions:
-  xmlFiles:
-    handler: src/functions/insertXML.handler
-    description: function in charge of inserting xml type files into dynamodb
+  insertRecords:
+    handler: src/functions/mining-plants/crudRecords.insert
+    description: function in charge of inserting records into dynamodb
     events:
       - http:
-          path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_XML_FILES_NAME}/
+          path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/
           method: POST
           private: true
   sources:

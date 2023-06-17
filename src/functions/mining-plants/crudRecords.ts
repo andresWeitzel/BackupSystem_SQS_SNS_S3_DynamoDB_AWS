@@ -23,11 +23,9 @@ const PAYMENTS_TABLE_NAME = process.env.DYNAMO_PAYMENTS_TABLE_NAME;
  * @param {Object} event Object type
  * @returns the added object
  */
-module.exports.handler = async (event: any) => {
+module.exports.insert = async (event: any) => {
     try {
         //Init
-
-
 
         //-- start with validation headers and keys  ---
         eventHeaders = await event.headers;
@@ -44,7 +42,7 @@ module.exports.handler = async (event: any) => {
 
     } catch (error) {
         code = statusCode.INTERNAL_SERVER_ERROR;
-        msg = `Error in INSERT XML lambda. Caused by ${error}`;
+        msg = `Error in the insert function of the CRUD RECORDS lambda. Caused by ${error}`;
         console.error(`${msg}. Stack error type : ${error.stack}`);
 
         return await requestResult(code, msg);
