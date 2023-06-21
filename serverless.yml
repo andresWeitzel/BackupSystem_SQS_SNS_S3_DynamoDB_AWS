@@ -41,6 +41,14 @@ functions:
           path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/
           method: POST
           private: true
+  getAllRecords:
+    handler: src/functions/mining-plants/crudRecords.getAll
+    description: function in charge of get all paginated records from the dynamodb
+    events:
+      - http:
+          path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/list
+          method: GET
+          private: true          
 
 custom:
   dynamodb:
