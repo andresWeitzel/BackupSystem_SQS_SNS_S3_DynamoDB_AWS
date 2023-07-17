@@ -2,7 +2,6 @@
 import { MiningPlants } from "src/interfaces/MiningPlants";
 //Enums
 import { statusCode } from "src/enums/http/statusCode";
-import { value } from "src/enums/general/values";
 //Helpers
 import { bodyResponse } from "src/helpers/http/bodyResponse";
 import { validateHeadersAndKeys } from "src/helpers/validations/headers/validateHeadersAndKeys";
@@ -36,7 +35,7 @@ module.exports.execute = async (event: any) => {
 
         checkEventHeadersAndKeys = await validateHeadersAndKeys(eventHeaders);
 
-        if (checkEventHeadersAndKeys != value.IS_NULL) {
+        if (checkEventHeadersAndKeys != null) {
             return checkEventHeadersAndKeys;
         }
         //-- end with validation headers and keys  ---
@@ -63,7 +62,7 @@ module.exports.execute = async (event: any) => {
         }
 
 
-        if (itemTransactionResult == value.IS_NULL || itemTransactionResult == value.IS_UNDEFINED || !(itemTransactionResult.length)) {
+        if (itemTransactionResult == null || itemTransactionResult == undefined || !(itemTransactionResult.length)) {
             return await bodyResponse(
                 statusCode.INTERNAL_SERVER_ERROR,
                 "An error has occurred, the object has not been inserted into the database. Try again"

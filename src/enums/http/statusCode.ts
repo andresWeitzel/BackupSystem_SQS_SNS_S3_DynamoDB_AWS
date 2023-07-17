@@ -3,7 +3,7 @@
  * @returns the status code 
  * @example OK --> 200
  */
-const statusCode = {
+export const statusCode = {
     OK: 200,
     CREATED: 201,
     BAD_REQUEST: 400,
@@ -15,5 +15,3 @@ const statusCode = {
     SERVICE_UNAVAILABLE: 503
 
 }
-
-module.exports = { statusCode }

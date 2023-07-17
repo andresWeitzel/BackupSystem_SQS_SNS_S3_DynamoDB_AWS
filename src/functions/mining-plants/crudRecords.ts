@@ -2,7 +2,6 @@
 import { MiningPlants } from "src/interfaces/MiningPlants";
 //Enums
 import { statusCode } from "src/enums/http/statusCode";
-import { value } from "src/enums/general/values";
 //Helpers
 import { bodyResponse } from "src/helpers/http/bodyResponse";
 import { validateHeadersAndKeys } from "src/helpers/validations/headers/validateHeadersAndKeys";
@@ -45,7 +44,7 @@ module.exports.insert = async (event: any) => {
 
         checkEventHeadersAndKeys = await validateHeadersAndKeys(eventHeaders);
 
-        if (checkEventHeadersAndKeys != value.IS_NULL) {
+        if (checkEventHeadersAndKeys != null) {
             return checkEventHeadersAndKeys;
         }
         //-- end with validation headers and keys  ---
@@ -72,7 +71,7 @@ module.exports.insert = async (event: any) => {
         }
 
 
-        if (itemTransactionResult == value.IS_NULL || itemTransactionResult == value.IS_UNDEFINED || !(itemTransactionResult.length)) {
+        if (itemTransactionResult == null || itemTransactionResult == undefined || !(itemTransactionResult.length)) {
             return await bodyResponse(
                 statusCode.INTERNAL_SERVER_ERROR,
                 "An error has occurred, the object has not been inserted into the database. Try again"
@@ -114,7 +113,7 @@ module.exports.getAll = async (event: any) => {
 
         checkEventHeadersAndKeys = await validateHeadersAndKeys(eventHeaders);
 
-        if (checkEventHeadersAndKeys != value.IS_NULL) {
+        if (checkEventHeadersAndKeys != null) {
             return checkEventHeadersAndKeys;
         }
         //-- end with validation headers and keys  ---
@@ -127,14 +126,14 @@ module.exports.getAll = async (event: any) => {
         paramOrderAt = eventQueryStrParams.orderAt;
 
         pageSizeNro =
-            (paramPageSizeNro != value.IS_NULL &&
-                paramPageSizeNro != value.IS_UNDEFINED &&
+            (paramPageSizeNro != null &&
+                paramPageSizeNro != undefined &&
                 !isNaN(paramPageSizeNro))
                 ? paramPageSizeNro
                 : pageSizeNro;
         orderAt =
-            (paramOrderAt != value.IS_NULL &&
-                paramOrderAt != value.IS_UNDEFINED &&
+            (paramOrderAt != null &&
+                paramOrderAt != undefined &&
                 isNaN(paramOrderAt))
                 ? paramOrderAt
                 : orderAt;
@@ -143,7 +142,7 @@ module.exports.getAll = async (event: any) => {
         //-- start with db operations  ---
         itemsTransactionResult = await getAllItems(MINING_PLANTS_TABLE_NAME, pageSizeNro, orderAt);
 
-        if (itemsTransactionResult == value.IS_NULL || !(itemsTransactionResult.length)) {
+        if (itemsTransactionResult == null || !(itemsTransactionResult.length)) {
             return await bodyResponse(
                 statusCode.INTERNAL_SERVER_ERROR,
                 "Bad request, could not get a paginated mining plants list. Check if there are records in the database and try again"
