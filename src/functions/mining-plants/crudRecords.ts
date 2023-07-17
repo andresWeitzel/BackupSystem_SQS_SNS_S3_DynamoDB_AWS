@@ -4,7 +4,7 @@ import { MiningPlants } from "src/interfaces/MiningPlants";
 import { statusCode } from "src/enums/http/statusCode";
 import { value } from "src/enums/general/values";
 //Helpers
-import { requestResult } from "src/helpers/http/bodyResponse";
+import { bodyResponse } from "src/helpers/http/bodyResponse";
 import { validateHeadersAndKeys } from "src/helpers/validations/headers/validateHeadersAndKeys";
 import { formatToJson } from "src/helpers/format/formatToJson";
 import { insertItems } from "src/helpers/dynamodb/operations/insertItems";
@@ -23,6 +23,7 @@ let pageSizeNro: number;
 let orderAt: string;
 let eventQueryStrParams: any;
 let paramPageSizeNro: any;
+let eventBody:any;
 let paramOrderAt: any;
 const MINING_PLANTS_TABLE_NAME = process.env.DYNAMO_MINING_PLANTS_TABLE_NAME;
 
@@ -50,7 +51,7 @@ module.exports.insert = async (event: any) => {
         //-- end with validation headers and keys  ---
 
         //-- start with db transaction  ---
-        let eventBody = await formatToJson(event.body);
+        eventBody = await formatToJson(event.body);
 
         for (let i of eventBody) {
 
@@ -72,13 +73,13 @@ module.exports.insert = async (event: any) => {
 
 
         if (itemTransactionResult == value.IS_NULL || itemTransactionResult == value.IS_UNDEFINED || !(itemTransactionResult.length)) {
-            return await requestResult(
+            return await bodyResponse(
                 statusCode.INTERNAL_SERVER_ERROR,
                 "An error has occurred, the object has not been inserted into the database. Try again"
             );
         }
 
-        return await requestResult(statusCode.OK, itemsList);
+        return await bodyResponse(statusCode.OK, itemsList);
         //-- end with db transaction  ---
 
     } catch (error) {
@@ -86,7 +87,7 @@ module.exports.insert = async (event: any) => {
         msg = `Error in the insert function of the CRUD RECORDS lambda. Caused by ${error}`;
         console.error(`${msg}. Stack error type : ${error.stack}`);
 
-        return await requestResult(code, msg);
+        return await bodyResponse(code, msg);
     }
 };
 
@@ -143,13 +144,13 @@ module.exports.getAll = async (event: any) => {
         itemsTransactionResult = await getAllItems(MINING_PLANTS_TABLE_NAME, pageSizeNro, orderAt);
 
         if (itemsTransactionResult == value.IS_NULL || !(itemsTransactionResult.length)) {
-            return await requestResult(
+            return await bodyResponse(
                 statusCode.INTERNAL_SERVER_ERROR,
                 "Bad request, could not get a paginated mining plants list. Check if there are records in the database and try again"
             );
         }
 
-        return await requestResult(statusCode.OK, itemsTransactionResult);
+        return await bodyResponse(statusCode.OK, itemsTransactionResult);
         //-- end with db operations  ---
 
 
@@ -158,6 +159,6 @@ module.exports.getAll = async (event: any) => {
         msg = `Error in the getAll function of the CRUD RECORDS lambda. Caused by ${error}`;
         console.error(`${msg}. Stack error type : ${error.stack}`);
 
-        return await requestResult(code, msg);
+        return await bodyResponse(code, msg);
     }
 };

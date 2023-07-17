@@ -4,7 +4,7 @@ import { MiningPlants } from "src/interfaces/MiningPlants";
 import { statusCode } from "src/enums/http/statusCode";
 import { value } from "src/enums/general/values";
 //Helpers
-import { requestResult } from "src/helpers/http/bodyResponse";
+import { bodyResponse } from "src/helpers/http/bodyResponse";
 import { validateHeadersAndKeys } from "src/helpers/validations/headers/validateHeadersAndKeys";
 import { formatToJson } from "src/helpers/format/formatToJson";
 import { insertItems } from "src/helpers/dynamodb/operations/insertItems";
@@ -64,13 +64,13 @@ module.exports.execute = async (event: any) => {
 
 
         if (itemTransactionResult == value.IS_NULL || itemTransactionResult == value.IS_UNDEFINED || !(itemTransactionResult.length)) {
-            return await requestResult(
+            return await bodyResponse(
                 statusCode.INTERNAL_SERVER_ERROR,
                 "An error has occurred, the object has not been inserted into the database. Try again"
             );
         }
 
-        return await requestResult(statusCode.OK, itemsList);
+        return await bodyResponse(statusCode.OK, itemsList);
         //-- end with db transaction  ---
 
     } catch (error) {
@@ -78,6 +78,6 @@ module.exports.execute = async (event: any) => {
         msg = `Error in the insert function of the CRUD RECORDS lambda. Caused by ${error}`;
         console.error(`${msg}. Stack error type : ${error.stack}`);
 
-        return await requestResult(code, msg);
+        return await bodyResponse(code, msg);
     }
 };
