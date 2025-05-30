@@ -1,7 +1,41 @@
 
 ![Index app](./doc/assets/SNS_SQS_DYNAMO_S3.drawio.png)
 
+
+<div align="right">
+  <img width="25" height="25" src="./doc/assets/icons/devops/png/aws.png" />
+  <img width="25" height="25" src="./doc/assets/icons/aws/png/lambda.png" />
+  <img width="27" height="27" src="./doc/assets/icons/devops/png/postman.png" />
+  <img width="29" height="27" src="./doc/assets/icons/devops/png/git.png" />
+  <img width="25" height="25" src="./doc/assets/icons/aws/png/s3.png" />
+  <img width="28" height="27" src="./doc/assets/icons/aws/png/api-gateway.png" />
+  <img width="23" height="25" src="./doc/assets/icons/aws/png/sqs.png" />
+  <img width="27" height="25" src="./doc/assets/icons/aws/png/parameter-store.png" />
+  <img width="27" height="27" src="./doc/assets/icons/backend/javascript-typescript/png/nodejs.png" />
+  <img width="25" height="27" src="./doc/assets/icons/aws/png/dynamo.png" />
+  <img width="25" height="25" src="./doc/assets/icons/backend/javascript-typescript/png/typescript.png" />
+
+</div> 
+
+<br>
+
+<br>
+
+<div align="right">
+  <a href="">
+    <img width="65" height="40" src="./doc/assets/translation/arg-flag.jpg" />
+  </a> 
+  <a href="">
+    <img width="65" height="40" src="./doc/assets/translation/eeuu-flag.jpg" />
+  </a> 
+</div>
+
+<div align="center">
+
 # BackupSystem_SQS_SNS_S3_DynamoDB_AWS
+
+</div>
+
 Sistema de respaldo para registros de plantas mineras implementado con SQS, SNS, Typescript, S3, DynamoDB, Api Gateway, Cloudwatch, Systems Manager Parameter Store, Serverless-Framework, Lambda, entre otros.
 
 * [Dataset Plantas Mineras](https://www.datos.gob.ar/dataset/energia-proyectos-mineros-ubicacion-aproximada)
