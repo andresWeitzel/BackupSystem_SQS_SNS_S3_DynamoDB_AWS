@@ -49,6 +49,30 @@ functions:
           path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/list
           method: GET
           private: true          
+  getByIdRecord:
+    handler: src/functions/mining-plants/crudRecords.getById
+    description: function in charge of getting one record by id from dynamodb
+    events:
+      - http:
+          path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/{uuid}
+          method: GET
+          private: true
+  updateRecord:
+    handler: src/functions/mining-plants/crudRecords.update
+    description: function in charge of updating one record by id in dynamodb
+    events:
+      - http:
+          path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/{uuid}
+          method: PUT
+          private: true
+  deleteRecord:
+    handler: src/functions/mining-plants/crudRecords.delete
+    description: function in charge of deleting one record by id from dynamodb
+    events:
+      - http:
+          path: /${file(./serverless_ssm.yml):API_VERSION}/${file(./serverless_ssm.yml):API_ENDPOINT_MINING_PLANTS_NAME}/{uuid}
+          method: DELETE
+          private: true
 
 custom:
   dynamodb:
