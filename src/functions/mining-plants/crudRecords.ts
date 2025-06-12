@@ -9,6 +9,9 @@ import { formatToJson } from "src/helpers/format/formatToJson";
 import { insertItems } from "src/helpers/dynamodb/operations/insertItems";
 import { formatToBigint } from "src/helpers/format/formatToNumber";
 import { getAllItems } from "src/helpers/dynamodb/operations/getAllItems";
+import { getOneItem } from "src/helpers/dynamodb/operations/getOneItem";
+import { updateOneItem } from "src/helpers/dynamodb/operations/updateOneItem";
+import { deleteOneItem } from "src/helpers/dynamodb/operations/deleteOneItem";
 //Const/Vars
 let eventHeaders: any;
 let checkEventHeadersAndKeys: any;
@@ -156,6 +159,179 @@ module.exports.getAll = async (event: any) => {
     } catch (error) {
         code = statusCode.INTERNAL_SERVER_ERROR;
         msg = `Error in the getAll function of the CRUD RECORDS lambda. Caused by ${error}`;
+        console.error(`${msg}. Stack error type : ${error.stack}`);
+
+        return await bodyResponse(code, msg);
+    }
+};
+
+/**
+ * @description get one record by id from dynamo database
+ * @param {Object} event Object type
+ * @returns the requested object
+ */
+module.exports.getById = async (event: any) => {
+    try {
+        //Init
+        itemTransactionResult = null;
+        let uuid: string;
+
+        //-- start with validation headers and keys  ---
+        eventHeaders = await event.headers;
+
+        checkEventHeadersAndKeys = await validateHeadersAndKeys(eventHeaders);
+
+        if (checkEventHeadersAndKeys != null) {
+            return checkEventHeadersAndKeys;
+        }
+        //-- end with validation headers and keys  ---
+
+        //-- start with path parameters  ---
+        uuid = event.pathParameters.uuid;
+
+        if (uuid == null || uuid == undefined || uuid == '') {
+            return await bodyResponse(
+                statusCode.BAD_REQUEST,
+                "Bad request, the uuid parameter is required"
+            );
+        }
+        //-- end with path parameters  ---
+
+        //-- start with db operations  ---
+        itemTransactionResult = await getOneItem(MINING_PLANTS_TABLE_NAME, uuid);
+
+        if (itemTransactionResult == null || itemTransactionResult == undefined) {
+            return await bodyResponse(
+                statusCode.NOT_FOUND,
+                "Not found, the mining plant with the specified uuid does not exist"
+            );
+        }
+
+        return await bodyResponse(statusCode.OK, itemTransactionResult);
+        //-- end with db operations  ---
+
+    } catch (error) {
+        code = statusCode.INTERNAL_SERVER_ERROR;
+        msg = `Error in the getById function of the CRUD RECORDS lambda. Caused by ${error}`;
+        console.error(`${msg}. Stack error type : ${error.stack}`);
+
+        return await bodyResponse(code, msg);
+    }
+};
+
+/**
+ * @description update one record by id in dynamo database
+ * @param {Object} event Object type
+ * @returns the updated object
+ */
+module.exports.update = async (event: any) => {
+    try {
+        //Init
+        itemTransactionResult = null;
+        let uuid: string;
+        let updateData: any;
+
+        //-- start with validation headers and keys  ---
+        eventHeaders = await event.headers;
+
+        checkEventHeadersAndKeys = await validateHeadersAndKeys(eventHeaders);
+
+        if (checkEventHeadersAndKeys != null) {
+            return checkEventHeadersAndKeys;
+        }
+        //-- end with validation headers and keys  ---
+
+        //-- start with path parameters and body  ---
+        uuid = event.pathParameters.uuid;
+        updateData = await formatToJson(event.body);
+
+        if (uuid == null || uuid == undefined || uuid == '') {
+            return await bodyResponse(
+                statusCode.BAD_REQUEST,
+                "Bad request, the uuid parameter is required"
+            );
+        }
+
+        if (updateData == null || updateData == undefined) {
+            return await bodyResponse(
+                statusCode.BAD_REQUEST,
+                "Bad request, the update data is required"
+            );
+        }
+        //-- end with path parameters and body  ---
+
+        //-- start with db operations  ---
+        itemTransactionResult = await updateOneItem(MINING_PLANTS_TABLE_NAME, uuid, updateData);
+
+        if (itemTransactionResult == null || itemTransactionResult == undefined) {
+            return await bodyResponse(
+                statusCode.NOT_FOUND,
+                "Not found, the mining plant with the specified uuid does not exist"
+            );
+        }
+
+        return await bodyResponse(statusCode.OK, itemTransactionResult);
+        //-- end with db operations  ---
+
+    } catch (error) {
+        code = statusCode.INTERNAL_SERVER_ERROR;
+        msg = `Error in the update function of the CRUD RECORDS lambda. Caused by ${error}`;
+        console.error(`${msg}. Stack error type : ${error.stack}`);
+
+        return await bodyResponse(code, msg);
+    }
+};
+
+/**
+ * @description delete one record by id from dynamo database
+ * @param {Object} event Object type
+ * @returns message indicating if the record was deleted or not
+ */
+module.exports.delete = async (event: any) => {
+    try {
+        //Init
+        itemTransactionResult = null;
+        let uuid: string;
+        let responseMessage: string;
+
+        //-- start with validation headers and keys  ---
+        eventHeaders = await event.headers;
+
+        checkEventHeadersAndKeys = await validateHeadersAndKeys(eventHeaders);
+
+        if (checkEventHeadersAndKeys != null) {
+            return checkEventHeadersAndKeys;
+        }
+        //-- end with validation headers and keys  ---
+
+        //-- start with path parameters  ---
+        uuid = event.pathParameters.uuid;
+
+        if (uuid == null || uuid == undefined || uuid == '') {
+            return await bodyResponse(
+                statusCode.BAD_REQUEST,
+                "Bad request, the uuid parameter is required"
+            );
+        }
+        //-- end with path parameters  ---
+
+        //-- start with db operations  ---
+        itemTransactionResult = await deleteOneItem(MINING_PLANTS_TABLE_NAME, uuid);
+
+        if (itemTransactionResult == null || itemTransactionResult == undefined) {
+            return await bodyResponse(
+                statusCode.NOT_FOUND,
+                "Not found, the mining plant with the specified uuid does not exist"
+            );
+        }
+
+        responseMessage = `The mining plant "${itemTransactionResult.nombre}" was successfully deleted`;
+        return await bodyResponse(statusCode.OK, responseMessage);
+        //-- end with db operations  ---
+
+    } catch (error) {
+        code = statusCode.INTERNAL_SERVER_ERROR;
+        msg = `Error in the delete function of the CRUD RECORDS lambda. Caused by ${error}`;
         console.error(`${msg}. Stack error type : ${error.stack}`);
 
         return await bodyResponse(code, msg);
