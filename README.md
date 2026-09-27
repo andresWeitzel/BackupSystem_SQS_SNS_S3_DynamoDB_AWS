@@ -1,34 +1,35 @@
 
-![Index app](./doc/assets/SNS_SQS_DYNAMO_S3.drawio.png)
-
-
+<div align="center">
+<img src="./doc/assets/SNS_SQS_DYNAMO_S3.drawio.png" alt="Index app" width="100%" />
 <div align="right">
-  <img width="25" height="25" src="./doc/assets/icons/devops/png/aws.png" />
-  <img width="25" height="25" src="./doc/assets/icons/aws/png/lambda.png" />
-  <img width="27" height="27" src="./doc/assets/icons/devops/png/postman.png" />
-  <img width="29" height="27" src="./doc/assets/icons/devops/png/git.png" />
-  <img width="25" height="25" src="./doc/assets/icons/aws/png/s3.png" />
-  <img width="28" height="27" src="./doc/assets/icons/aws/png/api-gateway.png" />
-  <img width="23" height="25" src="./doc/assets/icons/aws/png/sqs.png" />
-  <img width="27" height="25" src="./doc/assets/icons/aws/png/parameter-store.png" />
-  <img width="27" height="27" src="./doc/assets/icons/backend/javascript-typescript/png/nodejs.png" />
-  <img width="25" height="27" src="./doc/assets/icons/aws/png/dynamo.png" />
-  <img width="25" height="25" src="./doc/assets/icons/backend/javascript-typescript/png/typescript.png" />
-
-</div> 
-
-<br>
-
-<br>
-
-<div align="right">
-  <a href="">
-    <img width="65" height="40" src="./doc/assets/translation/arg-flag.jpg" />
-  </a> 
-  <a href="">
-    <img width="65" height="40" src="./doc/assets/translation/eeuu-flag.jpg" />
-  </a> 
+<img width="16" height="16" src="./doc/assets/icons/devops/png/aws.png" alt="AWS" />
+<img width="16" height="16" src="./doc/assets/icons/aws/png/lambda.png" alt="Lambda" />
+<img width="16" height="16" src="./doc/assets/icons/devops/png/postman.png" alt="Postman" />
+<img width="16" height="16" src="./doc/assets/icons/devops/png/git.png" alt="Git" />
+<img width="16" height="16" src="./doc/assets/icons/aws/png/s3.png" alt="S3" />
+<img width="16" height="16" src="./doc/assets/icons/aws/png/api-gateway.png" alt="API Gateway" />
+<img width="16" height="16" src="./doc/assets/icons/aws/png/sqs.png" alt="SQS" />
+<img width="16" height="16" src="./doc/assets/icons/aws/png/parameter-store.png" alt="Parameter Store" />
+<img width="16" height="16" src="./doc/assets/icons/backend/javascript-typescript/png/nodejs.png" alt="Node.js" />
+<img width="16" height="16" src="./doc/assets/icons/aws/png/dynamo.png" alt="DynamoDB" />
+<img width="16" height="16" src="./doc/assets/icons/backend/javascript-typescript/png/typescript.png" alt="TypeScript" />
 </div>
+</div>
+
+<br>
+
+<br>
+
+<div align="right">
+  <a href="./README.md" title="Español">
+    <img src="./doc/assets/translation/arg-flag.jpg" width="64" height="40" alt="Español" title="Español" />
+  </a>
+  <a href="./translation/README.en.md" title="Inglés">
+    <img src="./doc/assets/translation/eeuu-flag.jpg" width="64" height="40" alt="Inglés" title="Inglés" />
+  </a>
+</div>
+
+<br>
 
 <div align="center">
 
@@ -36,9 +37,13 @@
 
 </div>
 
-Sistema de respaldo para registros de plantas mineras implementado con SQS, SNS, Typescript, S3, DynamoDB, Api Gateway, Cloudwatch, Systems Manager Parameter Store, Serverless-Framework, Lambda, entre otros.
+Un sistema de respaldo para que los registros de tus plantas mineras queden guardados, consultables y recuperables. Reúne nombre, empresa, tipo de yacimiento, estado, mineral principal y geolocalización, con alta, listado, consulta, edición y baja autenticadas sobre DynamoDB, y copias en S3 a través de SQS y SNS, para que esa información quede centralizada y lista para integrarse con el resto de tus servicios en AWS.
 
-* [Dataset Plantas Mineras](https://www.datos.gob.ar/dataset/energia-proyectos-mineros-ubicacion-aproximada)
+<div align="left">
+<a href="https://www.datos.gob.ar/dataset/energia-proyectos-mineros-ubicacion-aproximada" target="_blank" rel="noopener noreferrer" title="Dataset"><img src="./doc/assets/icons/detail-actions/dataset-pill.svg" alt="Dataset" width="100" height="30" border="0" /></a>
+<br>
+<a href="./src/collection/Backup_System_Mining_Plants_AWS.postman_collection.json" target="_blank" rel="noopener noreferrer" title="Colección de Postman"><img src="./doc/assets/icons/detail-actions/postman-pill.svg" alt="Postman" width="100" height="30" border="0" /></a>
+</div>
 
 
 <br>
